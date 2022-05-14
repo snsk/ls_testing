@@ -1,6 +1,6 @@
 import os
 
-# Functional::Spec Confirmance::Basic Behavior
+# Functional_SpecConfirmance_BasicBehavior
 
 new_dir_path = 'Functional_SpecConfirmance_BasicBehavior'
 
