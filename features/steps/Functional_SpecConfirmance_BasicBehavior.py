@@ -2,7 +2,7 @@ import os
 import subprocess, sys
 from hamcrest import assert_that, equal_to
 
-# Functional::Spec Confirmance::Basic Behavior
+# # Functional_SpecConfirmance_BasicBehavior Test Case Imprement
 
 new_dir_path = 'Functional_SpecConfirmance_BasicBehavior'
 

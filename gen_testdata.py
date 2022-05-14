@@ -1,7 +1,5 @@
 import os
 
-# Functional_SpecConfirmance_BasicBehavior Test Case Imprement
-
 new_dir_path = 'Functional_SpecConfirmance_BasicBehavior'
 
 if not os.path.exists(new_dir_path):
