@@ -17,7 +17,10 @@ for file_name in file_list:
 
 @given(u'current directory.')
 def step_impl(context):
-    os.chdir('./'+new_dir_path+'/')
+    if new_dir_path in os.getcwd(): #this "given" will call many times in this feature.
+        pass
+    else:
+        os.chdir('./'+new_dir_path+'/')
 
 @when(u'the ls command is invoked with non-option.')
 def step_impl(context):
@@ -27,4 +30,11 @@ def step_impl(context):
 @then(u'same as invoked with a single argument of ‘.’.')
 def step_impl(context):
     assert_that(context.res_no_arg.stdout, equal_to(context.res_dot.stdout))
-    
+
+@when(u'When the ls command is invoked with Terminal.')
+def step_impl(context):
+    pass
+
+@then(u'Then the output is in columns (sorted vertically).')
+def step_impl(context):
+    pass
