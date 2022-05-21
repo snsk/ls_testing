@@ -31,10 +31,11 @@ def step_impl(context):
 def step_impl(context):
     assert_that(context.res_no_arg.stdout, equal_to(context.res_dot.stdout))
 
-@when(u'When the ls command is invoked with Terminal.')
+@when(u'the ls command is invoked with Terminal.')#TODO: make not clear the "invoked Terminal"
 def step_impl(context):
-    pass
+    context.hyphen1  = subprocess.run(["ls", "-1"], capture_output=True)
 
-@then(u'Then the output is in columns (sorted vertically).')
+@then(u'the output is in columns (sorted vertically).')
 def step_impl(context):
-    pass
+    print(context.hyphen1.stdout)
+    assert_that(context.hyphen1.stdout, equal_to(b'aaa\nbbb\nccc\n'))
