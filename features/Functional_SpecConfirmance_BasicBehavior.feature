@@ -31,4 +31,19 @@ Feature: Functional_SpecConfirmance_BasicBehavior
     Given current directory.
     When the ls command is invoked with non-option.
     Then lists the contents of directories
-  
+
+  Scenario: test case id 7
+    Given current directory.
+    When the ls command is invoked with non-option.
+    Then not recursively
+
+  Scenario: test case id 8
+    Given current directory.
+    When the ls command is invoked with non-option.
+    Then omitting files with names beginning with ‘.’
+
+  Scenario: test case id 9
+    Given current directory.
+    When the ls command is invoked with non-option.
+    Then the output is sorted alphabetically
+

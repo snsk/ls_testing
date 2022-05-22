@@ -49,6 +49,9 @@ def step_impl(context):
 @then(u'the output is listed one per line')
 @then(u'control characters are output as-is')
 @then(u'lists the contents of directories')
+@then(u'not recursively')
+@then(u'omitting files with names beginning with ‘.’')
+@then(u'the output is sorted alphabetically')
 def step_impl(context):
     assert_that(context.res_no_arg.stdout, equal_to(expected_normal_output))
 
