@@ -4,7 +4,7 @@ Test Development/Design Document:
 
 https://github.com/snsk/ls_testing/wiki/test_development
 
-Usage:
+Test Case Execution:
 ```sh
 git clone https://github.com/snsk/ls_testing.git
 sudo apt install python3-behave
