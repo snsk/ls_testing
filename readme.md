@@ -1,6 +1,6 @@
 # ls command test development
 
-usage:
+Usage:
 ```sh
 git clone https://github.com/snsk/ls_testing.git
 sudo apt install python3-behave
