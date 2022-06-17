@@ -26,6 +26,7 @@ def step_impl(context):
         pass
     else:
         os.chdir('./'+new_dir_path+'/')
+        print(os.getcwd())
 
 @when(u'the ls command is invoked with non-option.')
 def step_impl(context):

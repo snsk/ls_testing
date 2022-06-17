@@ -32,7 +32,11 @@ expected_normal_output = b'aaa.a\nbbbb.a\nccccc.b\ndddddd.b~\nfff\nggg_sl\nhhh_1
 
 @given(u'with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.')
 def step_impl(context):
-    pass
+    if new_dir_path in os.getcwd(): #this "given" will call many times in this feature.
+        pass
+    else:
+        os.chdir('./'+new_dir_path+'/')
+        print(os.getcwd())
 
 @when(u'the ls command is invoked with -a option.')
 def step_impl(context):
