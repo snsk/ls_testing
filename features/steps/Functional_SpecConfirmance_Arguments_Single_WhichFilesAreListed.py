@@ -29,14 +29,16 @@ if not os.path.exists('./'+new_dir_path+'/hhh_32'):
 
 expected_normal_output = b'aaa.a\nbbbb.a\nccccc.b\ndddddd.b~\nfff\nggg_sl\nhhh_16\nhhh_32\n'
 
+
 @given(u'with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.')
+    pass
 
-@when(u'the ls command is invoked with -a option.')      
+@when(u'the ls command is invoked with -a option.')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When the ls command is invoked with -a option.')
+    pass
 
-@then(u'do not ignore file names that start with dot.')  
+
+@then(u'do not ignore file names that start with dot.')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then do not ignore file names that start with dot.')
+    pass
