@@ -6,6 +6,7 @@ import subprocess, sys
 ret = subprocess.run([
     "ls", 
     "Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed",
-    "-a"
+    "-a",
+    "-A"
     ], capture_output=True)
 print(ret.stdout)

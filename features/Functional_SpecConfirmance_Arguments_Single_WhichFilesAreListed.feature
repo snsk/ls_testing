@@ -7,3 +7,8 @@ Feature: Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
     Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
     When the ls command is invoked with -a option.
     Then do not ignore file names that start with dot.
+
+  Scenario: test case id 2
+    Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
+    When the ls command is invoked with -a and -A option.
+    Then ignore cause -a option.
