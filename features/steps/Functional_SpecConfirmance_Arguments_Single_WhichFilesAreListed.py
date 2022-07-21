@@ -53,3 +53,19 @@ def step_impl(context):
 @then(u'ignore cause -a option.')
 def step_impl(context):
     assert_that(context.res_hyphen_a_A.stdout, equal_to(b'.eeeeeee.b\naaa.a\nbbbb.a\nccccc.b\ndddddd.b~\nfff\nggg_sl\nhhh_16\nhhh_32\n'))
+
+@when(u'the ls command is invoked with -B option.')       
+def step_impl(context):
+    context.res_hyphen_B = subprocess.run(["ls", "-B"], capture_output=True)
+
+@then(u'ignore files that end with ~')
+def step_impl(context):
+    assert_that(context.res_hyphen_B.stdout, equal_to(b'aaa.a\nbbbb.a\nccccc.b\nfff\nggg_sl\nhhh_16\nhhh_32\n'))
+
+@when(u'the ls command is invoked with -d option.')
+def step_impl(context):
+    context.res_hyphen_d = subprocess.run(["ls", "-d"], capture_output=True)
+
+@then(u'List just the names of directories')
+def step_impl(context):
+    assert_that(context.res_hyphen_d.stdout, equal_to(b'.\n'))
