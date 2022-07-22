@@ -15,10 +15,17 @@ Feature: Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
 
   Scenario: test case id 3
     Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
-    When the ls command is invoked with -B option.
-    Then ignore files that end with ~
+    When the ls command is invoked -A option.
+    Then do not ignore all file names that start with . ignore only . and ..
 
   Scenario: test case id 4
     Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
+    When the ls command is invoked with -B option.
+    Then ignore files that end with ~
+
+  Scenario: test case id 5
+    Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
     When the ls command is invoked with -d option.
     Then List just the names of directories
+
+  

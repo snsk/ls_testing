@@ -46,6 +46,14 @@ def step_impl(context):
 def step_impl(context):
     assert_that(context.res_hyphen_a.stdout, equal_to(b'.\n..\n.eeeeeee.b\naaa.a\nbbbb.a\nccccc.b\ndddddd.b~\nfff\nggg_sl\nhhh_16\nhhh_32\n'))
 
+@when(u'the ls command is invoked -A option.')
+def step_impl(context):
+    context.res_hyphen_a = subprocess.run(["ls", "-A"], capture_output=True) 
+
+@then(u'do not ignore all file names that start with . ignore only . and ..')        
+def step_impl(context):
+    assert_that(context.res_hyphen_a.stdout, equal_to(b'.eeeeeee.b\naaa.a\nbbbb.a\nccccc.b\ndddddd.b~\nfff\nggg_sl\nhhh_16\nhhh_32\n'))
+
 @when(u'the ls command is invoked with -a and -A option.')
 def step_impl(context):
     context.res_hyphen_a_A = subprocess.run(["ls", "-a", "-A"], capture_output=True)
