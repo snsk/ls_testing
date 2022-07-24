@@ -77,3 +77,11 @@ def step_impl(context):
 @then(u'List just the names of directories')
 def step_impl(context):
     assert_that(context.res_hyphen_d.stdout, equal_to(b'.\n'))
+
+@when(u'the ls command is invoked with -H option and specifies a symbolic link')
+def step_impl(context):        
+    context.res_hyphen_H = subprocess.run(["ls","ggg_sl", "-H"], capture_output=True)
+
+@then(u'show information for the file the link references')   
+def step_impl(context):
+    assert_that(context.res_hyphen_H.stdout, equal_to(b'aaa.a\n'))

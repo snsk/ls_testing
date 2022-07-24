@@ -28,4 +28,10 @@ Feature: Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
     When the ls command is invoked with -d option.
     Then List just the names of directories
 
+  Scenario: test case id 6
+    Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
+    When the ls command is invoked with -H option and specifies a symbolic link
+    Then show information for the file the link references
+
+
   
