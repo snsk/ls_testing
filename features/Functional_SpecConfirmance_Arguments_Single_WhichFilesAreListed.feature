@@ -67,3 +67,8 @@ Feature: Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
     Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
     When the ls command is invoked with --hide=*.a
     Then  ignore files whose names match the shell pattern pattern
+
+  Scenario: test case id 14
+    Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
+    When the ls command is invoked with --ignore=*.a
+    Then  ignore files whose names match the shell pattern pattern

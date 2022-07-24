@@ -143,6 +143,10 @@ def step_impl(context):
 def step_impl(context):
     context.res_hyphen_hyde = subprocess.run(["ls","--hide=*.a"], capture_output=True)
 
+@when(u'the ls command is invoked with --ignore=*.a')
+def step_impl(context):
+    context.res_hyphen_hyde = subprocess.run(["ls","--ignore=*.a"], capture_output=True)
+
 @then(u'ignore files whose names match the shell pattern pattern')
 def step_impl(context):
     assert_that(context.res_hyphen_hyde.stdout, equal_to(b'ccccc.b\ndddddd.b~\nfff\nggg_sl_d\nggg_sl_f\nhhh_16\nhhh_32\n'))
