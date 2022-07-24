@@ -106,3 +106,12 @@ def step_impl(context):
 def step_impl(context):
     raise NotImplementedError(u'STEP: Then Do not dereference symbolic links')
     #could not create symlink to directory
+
+@when(u'the ls command is invoked with --sort=size')
+def step_impl(context):
+    context.res_hyphen_sort_size = subprocess.run(["ls","--sort=size"], capture_output=True)
+
+@then(u'Group all the directories before the files and then sort the directories and the files separately using the selected sort key =size')
+def step_impl(context):
+    assert_that(context.res_hyphen_sort_size.stdout, equal_to(b'fff\nggg_sl_d\nhhh_32\nhhh_16\nggg_sl_f\naaa.a\nbbbb.a\nccccc.b\ndddddd.b~\n'))
+

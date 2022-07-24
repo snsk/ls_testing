@@ -5,6 +5,6 @@ import subprocess, sys
 
 os.chdir("Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed")
 ret = subprocess.run([
-    "ls", 'ggg_sl', '-FH'
+    "ls", '--sort=size'
     ], capture_output=True)
 print(ret.stdout)
