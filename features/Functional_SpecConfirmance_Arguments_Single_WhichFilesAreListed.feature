@@ -77,3 +77,8 @@ Feature: Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
     Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
     When the ls command is invoked with -L
     Then show information for the file the link references and still prints the name of the link itself,
+
+  Scenario: test case id 16
+    Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
+    When the ls command is invoked with -R
+    Then List the contents of all directories recursively.

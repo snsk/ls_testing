@@ -153,8 +153,16 @@ def step_impl(context):
 
 @when(u'the ls command is invoked with -L')
 def step_impl(context):
-    context.res_hyphen_sort_width = subprocess.run(["ls","-L"], capture_output=True)
+    context.res_hyphen_L = subprocess.run(["ls","-L"], capture_output=True)
 
 @then(u'show information for the file the link references and still prints the name of the link itself,')
 def step_impl(context):
-    assert_that(context.res_hyphen_hyde.stdout, equal_to(b'aaa.a\nbbbb.a\nccccc.b\ndddddd.b~\nfff\nggg_sl_d\naaa.a\nhhh_16\nhhh_32\n'))
+    assert_that(context.res_hyphen_L.stdout, equal_to(b'aaa.a\nbbbb.a\nccccc.b\ndddddd.b~\nfff\nggg_sl_d\naaa.a\nhhh_16\nhhh_32\n'))
+
+@when(u'the ls command is invoked with -R')
+def step_impl(context):
+    context.res_hyphen_R = subprocess.run(["ls","-R"], capture_output=True)
+
+@then(u'List the contents of all directories recursively.')
+def step_impl(context):
+    assert_that(context.res_hyphen_R.stdout, equal_to(b'.:\naaa.a\nbbbb.a\nccccc.b\ndddddd.b~\nfff\nggg_sl_d\nggg_sl_f\nhhh_16\nhhh_32\n\n./fff:\n\n./ggg_sl_d:\n'))
