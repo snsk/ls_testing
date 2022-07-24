@@ -37,3 +37,8 @@ Feature: Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
     Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
     When the ls command is invoked with --dereference-command-line-symlink-to-dir option and specifies a symbolic link to directory
     Then show information for that directory
+
+  Scenario: test case id 8
+    Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
+    When the ls command is invoked with --dereference-command-line-symlink-to-dir option and specifies a symbolic link to directory
+    Then Do not dereference symbolic links

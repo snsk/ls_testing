@@ -101,3 +101,8 @@ def step_impl(context):
 def step_impl(context):
     raise NotImplementedError(u'STEP: Then show information for that directory')
     #could not create symlink to directory
+
+@then(u'Do not dereference symbolic links')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then Do not dereference symbolic links')
+    #could not create symlink to directory
