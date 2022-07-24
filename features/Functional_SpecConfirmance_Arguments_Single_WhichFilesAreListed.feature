@@ -33,5 +33,7 @@ Feature: Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
     When the ls command is invoked with -H option and specifies a symbolic link
     Then show information for the file the link references
 
-
-  
+  Scenario: test case id 7
+    Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
+    When the ls command is invoked with --dereference-command-line-symlink-to-dir option and specifies a symbolic link to directory
+    Then show information for that directory
