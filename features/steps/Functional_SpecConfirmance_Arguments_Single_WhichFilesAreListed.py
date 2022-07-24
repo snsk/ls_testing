@@ -121,4 +121,12 @@ def step_impl(context):
 
 @then(u'Group all the directories before the files and then sort the directories and the files separately using the selected sort key =width')
 def step_impl(context):
-    assert_that(context.res_hyphen_sort_size.stdout, equal_to(b'fff\naaa.a\nhhh_32\nhhh_16\nbbbb.a\nccccc.b\ndddddd.b~\nggg_sl_f\nggg_sl_d\n'))
+    assert_that(context.res_hyphen_sort_width.stdout, equal_to(b'fff\naaa.a\nhhh_32\nhhh_16\nbbbb.a\nccccc.b\ndddddd.b~\nggg_sl_f\nggg_sl_d\n'))
+
+@when(u'the ls command is invoked with --sort=extension')
+def step_impl(context):
+    context.res_hyphen_sort_ext = subprocess.run(["ls","--sort=extension"], capture_output=True)
+
+@then(u'Group all the directories before the files and then sort the directories and the files separately using the selected sort key =extension')
+def step_impl(context):
+    assert_that(context.res_hyphen_sort_ext.stdout, equal_to(b'fff\nggg_sl_d\nggg_sl_f\nhhh_16\nhhh_32\naaa.a\nbbbb.a\nccccc.b\ndddddd.b~\n'))
