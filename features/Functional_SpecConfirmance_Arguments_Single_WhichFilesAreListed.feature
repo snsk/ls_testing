@@ -47,3 +47,8 @@ Feature: Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
     Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
     When the ls command is invoked with --sort=size
     Then Group all the directories before the files and then sort the directories and the files separately using the selected sort key =size
+
+  Scenario: test case id 10
+    Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
+    When the ls command is invoked with --sort=width
+    Then Group all the directories before the files and then sort the directories and the files separately using the selected sort key =width
