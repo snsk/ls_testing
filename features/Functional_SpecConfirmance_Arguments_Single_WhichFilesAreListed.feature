@@ -72,3 +72,8 @@ Feature: Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
     Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
     When the ls command is invoked with --ignore=*.a
     Then  ignore files whose names match the shell pattern pattern
+
+  Scenario: test case id 15
+    Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
+    When the ls command is invoked with -L
+    Then show information for the file the link references and still prints the name of the link itself,

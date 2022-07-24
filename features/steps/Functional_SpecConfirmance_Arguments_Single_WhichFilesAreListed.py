@@ -150,3 +150,11 @@ def step_impl(context):
 @then(u'ignore files whose names match the shell pattern pattern')
 def step_impl(context):
     assert_that(context.res_hyphen_hyde.stdout, equal_to(b'ccccc.b\ndddddd.b~\nfff\nggg_sl_d\nggg_sl_f\nhhh_16\nhhh_32\n'))
+
+@when(u'the ls command is invoked with -L')
+def step_impl(context):
+    context.res_hyphen_sort_width = subprocess.run(["ls","-L"], capture_output=True)
+
+@then(u'show information for the file the link references and still prints the name of the link itself,')
+def step_impl(context):
+    assert_that(context.res_hyphen_hyde.stdout, equal_to(b'aaa.a\nbbbb.a\nccccc.b\ndddddd.b~\nfff\nggg_sl_d\naaa.a\nhhh_16\nhhh_32\n'))
