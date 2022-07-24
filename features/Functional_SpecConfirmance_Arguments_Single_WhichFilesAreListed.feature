@@ -62,3 +62,8 @@ Feature: Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
     Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
     When the ls command is invoked with --sort=size --sort=none
     Then Ignore cause --sort=size option
+
+  Scenario: test case id 13
+    Given with Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed directory.
+    When the ls command is invoked with --hide=*.a
+    Then  ignore files whose names match the shell pattern pattern

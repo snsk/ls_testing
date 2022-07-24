@@ -138,3 +138,11 @@ def step_impl(context):
 @then(u'Ignore cause --sort=size option')
 def step_impl(context):
     assert_that(context.res_hyphen_sort_s_and_n.stdout, equal_to(b'ggg_sl_f\nhhh_16\nccccc.b\nhhh_32\nggg_sl_d\ndddddd.b~\nfff\nbbbb.a\naaa.a\n'))
+
+@when(u'the ls command is invoked with --hide=*.a')
+def step_impl(context):
+    context.res_hyphen_hyde = subprocess.run(["ls","--hide=*.a"], capture_output=True)
+
+@then(u'ignore files whose names match the shell pattern pattern')
+def step_impl(context):
+    assert_that(context.res_hyphen_hyde.stdout, equal_to(b'ccccc.b\ndddddd.b~\nfff\nggg_sl_d\nggg_sl_f\nhhh_16\nhhh_32\n'))
