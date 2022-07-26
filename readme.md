@@ -11,3 +11,4 @@ sudo apt install python3-behave
 cd ls_testing
 behave
 ```
+*Currently IDs 6, 7, 8, 10, 12, and 15 for "Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed" fail. This does not appear to be working properly for the GNU specification.
