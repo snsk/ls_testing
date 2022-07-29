@@ -1,5 +1,6 @@
 import os
 import combi_testware
+import pytest
 
 combi_testware.gen_testdata()
 new_dir_path = 'Functional_SpecConfirmance_Arguments_Combination_WhichFilesAreListed'
@@ -9,6 +10,7 @@ if new_dir_path in os.getcwd(): #this "given" will call many times in this featu
 else:
     os.chdir('./'+new_dir_path+'/')
 
-def test_tmp():
-    ret = combi_testware.run_ls_command(combi_testware.combi_testcase_list[0])
-    assert ret == combi_testware.combi_expected_result[1]
+@pytest.mark.parametrize('val, expected', combi_testware.testcase_expected_pair_list)
+def test_multiple(val, expected):
+    assert combi_testware.run_ls_command(val) == expected
+
