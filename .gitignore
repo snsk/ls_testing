@@ -1,4 +1,6 @@
 /Functional_SpecConfirmance_BasicBehavior
 /Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
 /Functional_SpecConfirmance_Arguments_Combination_WhichFilesAreListed
-_pycache_*
+__pycache__*
+__pycache__/combi_testware.cpython-38.pyc
+__pycache__/test_combination.cpython-38-pytest-7.1.2.pyc
