@@ -19,6 +19,17 @@ def gen_random_file_name():
 
 print(gen_random_file_name())
 
+new_dir_path = 'HierarchyFuzzing'
+
+if not os.path.exists(new_dir_path):
+    os.makedirs(new_dir_path)
+
+for i in range(file_count_seed):
+    f = open('./'+new_dir_path+'/'+gen_random_file_name(), 'w')
+    f.close()
+
+print(str(file_count_seed) + 'files generated.')
+
 exit()
 
 # generate combination test case and expected result
