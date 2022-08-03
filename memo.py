@@ -2,19 +2,28 @@ import os
 import subprocess, sys
 import combi_testware
 import string
+import random
+import math
 
 char_array = list(string.printable)
 char_array.remove('/')
-print(char_array)
+
+filename_length_seed = math.floor(random.random()*255)
+file_count_seed = math.floor(random.random()*10000)
 
 def gen_random_file_name():
-    pass
+    filename = ''
+    for i in range(filename_length_seed):
+        filename = filename + random.choice(char_array)
+    return filename
+
+print(gen_random_file_name())
 
 exit()
 
 # generate combination test case and expected result
 
-new_dir_path = 'Functional_SpecConfirmance_Arguments_Combination_WhichFilesAreListed'
+new_dir_path =  'Functional_SpecConfirmance_Arguments_Combination_WhichFilesAreListed'
 if new_dir_path in os.getcwd(): #this "given" will call many times in this feature.
     pass
 else:
