@@ -36,7 +36,7 @@ Return 0-255 byte random file name include printable character.
 
 Generate random directory hierarchy between 1-255 levels and put random name and number of files from seed value. This is mono function(make directory and put files) due to generated directory name could not pre defined.
 
-### Hierarchy_Fuzzing
+### HierarchyFuzzing
 
 * run_ls_command(args, seed)
 
@@ -46,9 +46,9 @@ Exec ls command one times with specified args, seed and monitoring return value.
 
 Execute Hierarchy Fuzzing process and provide information the process follows:
 
-- Elapsed time since process start
-- Number of successful test runs
-- Occurred exceptions and seed values
+-Elapsed time since process start
+-Number of successful test runs
+-Occurred exceptions and seed values
 
 
 
