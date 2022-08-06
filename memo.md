@@ -1,4 +1,4 @@
-# HierarchyFuzzing　Design
+# HierarchyFuzzing Design
 
 Various directory and file structures will be generated and given to the ls command to verify that no serious malfunctions such as crashes or freezes occur. The following elements of directory and file structures are assumed.
 
@@ -30,8 +30,27 @@ Maximum length of path names is 1023 bytes
 
 * static gen_random_file_name()
 
-return 0-255 byte random file name include printable character.
+Return 0-255 byte random file name include printable character.
 
-* static gen_random_directory_hierarchy_and_put_files()
+* static gen_random_directory_hierarchy_and_put_files(seed, root_dir)
 
-generate random directory hierarchy between 1-255 levels and put random name and number of files. It is mono function due to generated directory name could not pre defined.
+Generate random directory hierarchy between 1-255 levels and put random name and number of files from seed value. This is mono function(make directory and put files) due to generated directory name could not pre defined.
+
+### Hierarchy_Fuzzing
+
+* run_ls_command(args, seed)
+
+Exec ls command one times with specified args, seed and monitoring return value. Arguments are optional. Seed value will pass to `gen_random_directory_hierarchy_and_put_files()`. If ls command return illegler value, this function raise exception with seed value. It value is necessary to re-procedure illegler behavior.
+
+* main(args)
+
+Execute Hierarchy Fuzzing process and provide information the process follows:
+
+- プロセス開始からの経過時間
+- 成功したテスト実行の数
+- 発生した例外とseed value
+
+
+
+
+
