@@ -46,9 +46,9 @@ Exec ls command one times with specified args, seed and monitoring return value.
 
 Execute Hierarchy Fuzzing process and provide information the process follows:
 
-- プロセス開始からの経過時間
-- 成功したテスト実行の数
-- 発生した例外とseed value
+- Elapsed time since process start
+- Number of successful test runs
+- Occurred exceptions and seed values
 
 
 
