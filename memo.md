@@ -7,8 +7,6 @@ Various directory and file structures will be generated and given to the ls comm
 * directory hierarchy
 * Number of files
 * Length of file names
-* number of symbolic links
-* length of symbolic link names
 
 ## General restrictions for Linux and file systems are as follows
 
