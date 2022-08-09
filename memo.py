@@ -5,6 +5,15 @@ import string
 import random
 import math
 
+ret = subprocess.run([
+    "ls", "-a", "hoge", 
+    ], capture_output=True)
+print(ret.returncode)
+print(ret.stdout)
+print(ret.stderr)
+
+exit()
+
 char_array = list(string.printable)
 char_array.remove('/')
 
