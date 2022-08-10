@@ -22,6 +22,10 @@ Maximum length of path names is 1023 bytes
 3. Check return value the ls command and watch timeout
 4. repeat step2, and step3.
 
+## Import modules 
+
+import randomfiletree
+
 ## Classes
 
 ### TestEnvironmentGenerator
@@ -29,10 +33,6 @@ Maximum length of path names is 1023 bytes
 * static gen_random_file_name()
 
 Return 0-255 byte random file name include printable character.
-
-* static gen_random_directory_hierarchy_and_put_files(seed, root_dir)
-
-Generate random directory hierarchy between 1-255 levels and put random name and number of files from seed value. This is mono function(make directory and put files) due to generated directory name could not pre defined.
 
 ### HierarchyFuzzing
 
