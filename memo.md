@@ -34,6 +34,10 @@ import randomfiletree
 
 Return 0-255 byte random file name include printable character.
 
+* setup()
+
+Set up test environment using randomfiletree and `gen_random_file_name`.
+
 ### HierarchyFuzzing
 
 * run_ls_command(args, seed)

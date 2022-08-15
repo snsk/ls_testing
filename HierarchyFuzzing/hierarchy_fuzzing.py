@@ -1,6 +1,7 @@
 import string
 import math
 import random
+import randomfiletree
 
 class TestEnvironmentGenerator():
 
@@ -14,9 +15,9 @@ class TestEnvironmentGenerator():
             filename = filename + random.choice(char_array)
         return filename
 
-    @staticmethod
-    def gen_random_directory_hierarchy_and_put_files(seed, root_dir):
+    def setup():
         pass
+
 
 class HierarchyFuzzing():
 
