@@ -24,8 +24,6 @@ class HierarchyFuzzing():
         ret = subprocess.run([
             "ls", "-a", "-R", "-l" 
             ], capture_output=True)
-        print(ret.returncode)
-        #print(ret.stdout)
-        #print(ret.stderr)
+        return ret.returncode
 
 
