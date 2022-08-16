@@ -41,3 +41,6 @@ python3 run_hf.py
 ```
 
 ![image](https://user-images.githubusercontent.com/462430/184812739-337c471d-a366-47ce-bf31-0bb1b68794dd.png)
+
+## License
+MIT
