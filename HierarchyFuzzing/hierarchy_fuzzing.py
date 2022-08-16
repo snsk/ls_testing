@@ -19,6 +19,7 @@ class TestEnvironmentGenerator():
 
 class HierarchyFuzzing():
 
+    @staticmethod
     def run_ls_command(workdir):
         os.chdir(workdir)
         ret = subprocess.run([
