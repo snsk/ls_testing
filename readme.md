@@ -43,5 +43,11 @@ python3 run_hf.py
 
 ![image](https://user-images.githubusercontent.com/462430/184812739-337c471d-a366-47ce-bf31-0bb1b68794dd.png)
 
+## CI Integration Sample
+
+CI by Github Actions is supported(see /workflows/ls_test.yml). In the example below, fuzzing is executed in parallel with Functional Testing because it takes time.
+
+![image](https://user-images.githubusercontent.com/462430/185539169-005bd0df-7bc9-4c66-8457-a1478163c1a2.png)
+
 ## License
 MIT
