@@ -2,7 +2,19 @@
 
 # ls command test development
 
-Test Development/Design Document:
+## SUT
+ls command for ubuntsu-latest Ubuntu 20.04.3 LTS as of 2020-11
+
+## Test base
+* [$man ls](https://github.com/snsk/ls_testing/wiki/man-ls(1))
+* Detail page https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation
+
+## Source code(Coreutils)
+* https://github.com/coreutils/coreutils/blob/master/src/ls.c
+* argument switch
+    * https://github.com/coreutils/coreutils/blob/5e36c0ce078a65c7dac6ac5ebdfb0cf096856427/src/ls.c#L1916
+
+## Test Development/Design Document:
 
 https://github.com/snsk/ls_testing/wiki/test_development
 
