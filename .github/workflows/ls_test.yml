@@ -36,4 +36,11 @@ jobs:
         run: | 
           sudo pip install pytest
           pytest
+          
+      - name: Run Robustness_Hierarchy_Fuzzing
+        if: always()
+        run: | 
+          sudo pip install randomfiletree
+          cd ./HierarchyFuzzing
+          python3 run_hf.py
 
