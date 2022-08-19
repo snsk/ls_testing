@@ -10,6 +10,7 @@ https://github.com/snsk/ls_testing/wiki/test_development
 
 ### Functional_SpecConfirmance_BasicBehavior
 ### Functional_SpecConfirmance_Arguments_Single_WhichFilesAreListed
+### Robustness_Consider_Noise
 
 Test Case Execution:
 ```sh
