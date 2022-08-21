@@ -11,9 +11,8 @@ class TestEnvironmentGenerator():
 
     @classmethod
     def gen_random_file_name(cls):    
-        filename_length_seed = math.floor(random.random()*255)
         filename = ''
-        for _ in range(filename_length_seed):
+        for _ in range(math.floor(random.random()*255)):
             filename = filename + random.choice(cls.__char_array)
         return filename
 
