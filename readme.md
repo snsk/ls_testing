@@ -71,7 +71,7 @@ python3 run_af.py
 
 CI by Github Actions is supported(see /workflows/ls_test.yml). In the example below, fuzzing is executed in parallel with Functional Testing because it takes time.
 
-![image](https://user-images.githubusercontent.com/462430/185539169-005bd0df-7bc9-4c66-8457-a1478163c1a2.png)
+<img width="606" alt="image" src="https://user-images.githubusercontent.com/462430/187053537-b66bae6f-425e-4688-b118-93ab57ec3df1.png">
 
 ## License
 MIT
