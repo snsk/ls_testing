@@ -1,5 +1,5 @@
-import arguments_fuzzing as af
 import randomfiletree
+import arguments_fuzzing as af
 import random
 import shutil
 import os
@@ -27,8 +27,12 @@ for i in range(round):
         maxdepth=random.random()*100,
         filename = af.TestEnvironmentGenerator.gen_random_file_name
     )
-    if af.ArgumentsFuzzing.run_ls_command(workdir) != 0:
+    rcode, rout, rerr, cmd = af.ArgumentsFuzzing.run_ls_command(workdir)
+    if  rcode != 0:
         error_count = error_count+1
+        print(rerr)
+        print(cmd)
+        print("")
     os.chdir('..')
     shutil.rmtree(workdir)
     print("\r"  + "test run count: "+ str(i+1) 

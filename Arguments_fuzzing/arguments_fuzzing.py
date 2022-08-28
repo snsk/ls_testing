@@ -18,12 +18,18 @@ class TestEnvironmentGenerator():
 
 class ArgumentsFuzzing():
 
-    @staticmethod
-    def run_ls_command(workdir):
+    # generate random arguments combination to __run_arg_array
+    __arg_array = ["-a", "-A", "-B", "-d", "-H", "--dereference-command-line-symlink-to-dir", "--sort=size", "--sort=extension","--sort=none", "--hide=*.a","--ignore=*.a", "-L","-R", "."]
+    __run_arg_array = ["ls"]
+        
+    @classmethod
+    def run_ls_command(cls, workdir):
+
+        for i in range(math.floor(random.random()*len(cls.__arg_array))):
+            cls.__run_arg_array.append(random.choice(cls.__arg_array))
+
         os.chdir(workdir)
-        ret = subprocess.run([
-            "ls", "-a", "-R", "-l" 
-            ], capture_output=True)
-        return ret.returncode
+        ret = subprocess.run(cls.__run_arg_array, capture_output=True)
+        return ret.returncode, ret.stdout, ret.stderr, cls.__run_arg_array
 
 

@@ -5,8 +5,18 @@ import string
 import random
 import math
 
+__arg_array = ["-a", "-A", "-B", "-d", "-H", "--dereference-command-line-symlink-to-dir", "--sort=size", "--sort=width","--sort=extension","--sort=none", "--hide=*.a","--ignore=*.a", "-L","-R", "."]
+__run_arg_array = ["ls"]
+
+for i in range(math.floor(random.random()*len(__arg_array))):
+    __run_arg_array.append(random.choice(__arg_array))
+
+print(__run_arg_array)
+
+exit()
+
 ret = subprocess.run([
-    "ls", "-a", "hoge", 
+    "ls", "-a"
     ], capture_output=True)
 print(ret.returncode)
 print(ret.stdout)
