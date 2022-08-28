@@ -1,11 +1,12 @@
 import arguments_fuzzing as af
+import randomfiletree
 import random
 import shutil
 import os
 import time
 
 workdir = './tmp'
-round = 100
+round = 1000
 error_count = 0
 print('workdir:' + os.getcwd())
 start = time.time()
@@ -21,12 +22,12 @@ for i in range(round):
 
     randomfiletree.core.iterative_gaussian_tree(
         workdir,
-        nfiles=random.random()*1000,
-        nfolders=random.random()*1000,    
+        nfiles=random.random()*100,
+        nfolders=random.random()*100,    
         maxdepth=random.random()*100,
-        filename = hf.TestEnvironmentGenerator.gen_random_file_name
+        filename = af.TestEnvironmentGenerator.gen_random_file_name
     )
-    if hf.HierarchyFuzzing.run_ls_command(workdir) != 0:
+    if af.ArgumentsFuzzing.run_ls_command(workdir) != 0:
         error_count = error_count+1
     os.chdir('..')
     shutil.rmtree(workdir)
