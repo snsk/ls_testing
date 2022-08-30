@@ -6,7 +6,7 @@ import os
 import time
 
 workdir = './tmp'
-round = 1000
+round = 10000
 error_count = 0
 print('workdir:' + os.getcwd())
 start = time.time()
