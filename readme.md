@@ -7,7 +7,6 @@
 ls command for ubuntsu-latest Ubuntu 20.04.3 LTS as of 2020-11
 
 ## Test base
-* [$man ls](https://github.com/snsk/ls_testing/wiki/man-ls(1))
 * Detail page https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation
 
 ## Source code(Coreutils)
