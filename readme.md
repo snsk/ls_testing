@@ -8,10 +8,10 @@ considered testing against the GNU specification of the well-known UNIX/Linux co
 ## SUT
 ls command for ubuntsu-latest Ubuntu 20.04.3 LTS as of 2020-11
 
-## Test base
+## Test base (Gnu specification)
 * Detail page https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation
 
-## Source code(Coreutils)
+## SUT Source code(Coreutils)
 * https://github.com/coreutils/coreutils/blob/master/src/ls.c
 * argument switch
     * https://github.com/coreutils/coreutils/blob/5e36c0ce078a65c7dac6ac5ebdfb0cf096856427/src/ls.c#L1916
