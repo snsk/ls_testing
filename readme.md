@@ -3,7 +3,7 @@
 
 # ls command test development
 
-considered testing against the GNU specification of the well-known UNIX/Linux command "ls" (List Directory). It includes test architecture design, detailed test design, test case creation, and automated test execution through a CI environment. Note that CI is Failing because some options do not meet the GNU specification, as described below.
+Considered testing against the GNU specification of the well-known UNIX/Linux command "ls" (List Directory). It includes test architecture design, detailed test design, test case creation, and automated test execution through a CI environment. Note that CI is Failing because some options do not meet the GNU specification, as described below.
 
 ## SUT
 ls command for ubuntsu-latest Ubuntu 20.04.3 LTS as of 2020-11
